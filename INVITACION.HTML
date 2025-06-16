@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Invitación de Cumpleaños!</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuración de la fuente Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos base para el cuerpo y la fuente */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to right top, #86d7f0, #f3a5b2); /* Fondo degradado festivo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px; /* Padding general para el cuerpo */
+            box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
+            overflow-x: hidden; /* Evita el scroll horizontal */
+        }
+
+        /* Animación de pulso para el título */
+        @keyframes pulse-grow {
+            0% {
+                transform: scale(1);
+                color: #8B5CF6; /* Un morado más claro */
+            }
+            50% {
+                transform: scale(1.03);
+                color: #6D28D9; /* Un morado más oscuro */
+            }
+            100% {
+                transform: scale(1);
+                color: #8B5CF6;
+            }
+        }
+
+        .animate-pulse-grow {
+            animation: pulse-grow 3s infinite ease-in-out; /* Aplica la animación */
+        }
+
+        /* Animación de brillo para el botón */
+        @keyframes shine {
+            0% {
+                box-shadow: 0 0 5px rgba(236, 72, 153, 0.5); /* Sombra inicial rosa suave */
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(236, 72, 153, 0.8), 0 0 30px rgba(236, 72, 153, 0.6); /* Sombra más intensa y amplia */
+            }
+            100% {
+                box-shadow: 0 0 5px rgba(236, 72, 153, 0.5);
+            }
+        }
+
+        .button-shine:hover {
+            animation: shine 1.5s infinite linear; /* Aplica la animación al pasar el ratón */
+        }
+
+        /* Estilo para las tarjetas internas (detalles del evento) */
+        .details-card {
+            background: rgba(255, 255, 255, 0.8); /* Fondo ligeramente transparente */
+            backdrop-filter: blur(5px); /* Efecto de desenfoque */
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Borde sutil */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+
+        /* Efecto al pasar el ratón por la tarjeta principal */
+        .main-card:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Sombra más profunda al hacer hover */
+        }
+
+        /* Estilo para el enlace de la dirección */
+        .location-link {
+            color: #6D28D9; /* Color morado */
+            text-decoration: underline; /* Subrayado para indicar que es un enlace */
+            font-weight: bold; /* Negrita */
+            transition: color 0.3s ease; /* Transición suave para el color */
+            display: block; /* Para que ocupe todo el ancho del párrafo */
+        }
+
+        .location-link:hover {
+            color: #C026D3; /* Un morado más claro al pasar el ratón */
+        }
+    </style>
+</head>
+<body>
+    <div class="max-w-md w-full bg-white rounded-3xl shadow-2xl p-8 md:p-10 text-center transform hover:scale-105 transition-transform duration-300 ease-in-out main-card">
+        <!-- Título principal de la invitación con animación -->
+        <h1 class="text-4xl md:text-5xl font-extrabold text-purple-700 mb-4 tracking-tight animate-pulse-grow">
+            🎉 ¡Estás Invitado! 🎉
+        </h1>
+        <!-- Mensaje de invitación -->
+        <p class="text-lg md:text-xl text-gray-800 mb-6 leading-relaxed">
+            Te esperamos para celebrar el cumpleaños de
+            <span class="font-bold text-pink-600">¡Toño!</span>
+        </p>
+
+        <!-- Detalles del evento con el nuevo estilo de tarjeta -->
+        <div class="bg-purple-100 rounded-2xl p-6 mb-6 details-card">
+            <div class="mb-4">
+                <p class="text-md md:text-lg font-semibold text-purple-800 flex items-center justify-center mb-2">
+                    <svg class="w-6 h-6 mr-2 text-purple-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                    Fecha:
+                </p>
+                <p class="text-lg md:text-xl font-bold text-purple-900">28 de Junio</p>
+            </div>
+            <div class="mb-4">
+                <p class="text-md md:text-lg font-semibold text-purple-800 flex items-center justify-center mb-2">
+                    <svg class="w-6 h-6 mr-2 text-purple-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l3 3a1 1 0 001.414-1.414L11 9.586V6z" clip-rule="evenodd"></path></svg>
+                    Hora:
+                </p>
+                <p class="text-lg md:text-xl font-bold text-purple-900">12 pm hora llegada</p>
+            </div>
+            <div>
+                <p class="text-md md:text-lg font-semibold text-purple-800 flex items-center justify-center mb-2">
+                    <svg class="w-6 h-6 mr-2 text-purple-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+                    Lugar:
+                </p>
+                <!-- Enlace a Google Maps con la ubicación proporcionada -->
+                <a href="https://maps.app.goo.gl/pJ1aE1pAR66ZzpQ3A" target="_blank" rel="noopener noreferrer" class="location-link">
+                    <p class="text-lg md:text-xl font-bold">Plaza Encuentro Oceania</p>
+                    <p class="text-sm"></p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Información de RSVP -->
+        <p class="text-md md:text-lg text-gray-700 mb-6">
+            Por favor, confirma tu asistencia antes del <span class="font-bold text-pink-600">25 de Junio</span>.
+        </p>
+        <a href="mailto:jm193635@gmail.com?subject=Confirmación de asistencia a Cumpleaños de Toño"
+           class="inline-block bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 shadow-lg button-shine">
+            ¡Confirma tu Asistencia!
+        </a>
+
+        <!-- Mensaje adicional o notas -->
+        <p class="text-sm text-gray-600 mt-8 italic">
+            ¡No te lo pierdas! 
+        </p>
+    </div>
+</body>
+</html>
